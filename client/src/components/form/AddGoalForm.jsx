@@ -14,7 +14,7 @@ const AddGoalForm = forwardRef(({ formSubmit }, ref) => {
       <div className="flex justify-between my-5">
         <h2 className="text-3xl">Add a goal</h2>
         <AiOutlineCloseSquare
-          className=" w-[2.5rem] h-auto"
+          className=" w-[2.5rem] h-auto cursor-pointer fill-[#B1B2FF] hover:fill-[#AAC4FF]"
           color="gray"
           onClick={() => modalDispatch({ type: "CLOSE_MODAL", payload: false })}
         />

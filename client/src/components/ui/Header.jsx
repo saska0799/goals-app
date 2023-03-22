@@ -3,10 +3,10 @@ import { useCookies } from "react-cookie";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import AuthContext from "../../context/auth/AuthContext";
 import ModalContext from "../../context/modal/ModalContext";
+import GoalContext from "../../pages/Home/context/GoalContext";
 import HeaderImg from "../../assets/header.jpg";
 import { generateRandomNumber } from "../../utils/randomNumber";
 import { formatDate } from "../../utils/formatDate";
-import GoalContext from "../../context/goal/GoalContext";
 import { getFetch } from "../../lib/fetch";
 import Button from "./Button";
 
@@ -48,24 +48,24 @@ const Header = () => {
       <div className="h-[80vh] relative flex flex-col justify-between md:p-24 sm:p-16 p-8">
         <div className="flex justify-between items-center">
           <AiOutlinePlusCircle
-            className="md:w-[5rem] w-[3rem] h-auto cursor-pointer"
-            color="white"
+            className="md:w-[5rem] w-[3rem] h-auto cursor-pointer fill-[#B1B2FF] hover:fill-[#AAC4FF] transition-all"
             onClick={() => modalDispatch({ type: "OPEN_MODAL", payload: true })}
           />
           {cookie.user && cookie.user !== "undefined" && (
             <div className="flex items-center">
-              <h3 className="mr-5 text-slate-200 lg:text-3xl sm:text-2xl text-xl">
-                Hello {cookie.user.user.username}
+              <h3 className="mr-5 lg:text-3xl sm:text-2xl text-xl text-[#D2DAFF]">
+                Hello{" "}
+                <span className="text-[#EEF1FF]">
+                  {cookie.user.user.username}
+                </span>
               </h3>
               <Button onClick={handleLogout}>Logout</Button>
             </div>
           )}
         </div>
-        <div className="flex justify-between items-center text-slate-200 lg:text-4xl md:text-3xl sm:text-2xl text-xl">
+        <div className="flex justify-between items-center text-[#EEF1FF] lg:text-4xl md:text-3xl sm:text-2xl text-xl">
           <p>{formattedDate}</p>
-          <h3 className="w-[70%]  text-end">
-            {quotes && quotes[randomNumber]}
-          </h3>
+          <h3 className="w-[70%] text-end">{quotes && quotes[randomNumber]}</h3>
         </div>
       </div>
     </header>

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ModalProvider } from "./context/modal/ModalContext";
-import { GoalProvider } from "./context/goal/GoalContext";
+import { GoalProvider } from "./pages/Home/context/GoalContext";
 import { AuthProvider } from "./context/auth/AuthContext";
 import { CookiesProvider } from "react-cookie";
 import "./assets/index.css";
